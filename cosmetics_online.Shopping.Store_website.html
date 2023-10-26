@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*box-sizing allows us to include the padding and border in an elements total width and height*/
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/*used to shape the body and every element in the body*/
+body {
+font-family: Arial, sans-serif;
+background-image: linear-gradient(rgba(255, 255, 255, 0.993),rgb(68, 67, 67));
+}
+/*it is used to shape the title*/
+.space {
+font-size: 46px;
+color: #333;
+margin-left: 530px;
+}
+.search-form {
+display: flex;
+margin-left: 570px;
+}
+.search-form input {
+border: 1px solid rgb(41, 38, 38);/*border width*/
+padding: 8px 40px;
+font-size: 15px;
+border-radius: 5px 0 0 5px;
+padding-left: 9px;
+}
+.search-form button {
+background-color: #333;
+color: #fff;
+border: 1px solid #333;
+padding: 8px 10px;
+font-size: 14px;
+border-radius: 0 4px 4px 0;
+}
+.navbar ul {
+display: inline-flex;
+list-style: none;
+gap: 50px;
+}
+.navbar ul li {
+margin-left: 10px;
+background: linear-gradient(pink,white);
+border-radius:30px ;
+padding: 10px;
+}
+.navbar a {
+color: #333;
+font-size: 14px;
+transition: 0.5s;
+}
+.navbar a:hover{
+color:rgb(212, 23, 64);
+letter-spacing: 2px;
+}
+/*the flex property sets the flexible length on flexible items*/
+.shopping-cart {
+display: flex;
+margin-left: 1200px;
+padding-bottom: 10px;
+gap: 30px;
+}
+.shopping-cart .fa{
+color: #000;
+}
+.shopping-cart .fa-heart{
+color: #000;
+}
+.shopping-cart .fa-shopping-cart:hover{
+
+color:rgb(247, 189, 0);
+}
+.shopping-cart .fa-address-book:hover{
+color: blueviolet
+}
+.shopping-cart .fa-heart:hover{
+color: #f55212;
+}
+.shopping-cart p{
+font-size: 16px;
+margin-left: 7px;
+transition: 1s;
+color: black;
+}
+.shopping-cart p:hover{
+color:paleturquoise;
+letter-spacing: 3px;
+}
+.shopping-cart .fa-heart{
+margin-left: 20px;
+}
+.home {
+position: relative;
+color:rgb(129, 124, 124);
+}/* absolute position it uses the document body, and moves along with scrolling*/
+.home .text{
+padding-bottom: 40px;
+left: 100px;
+position: absolute;
+bottom: 240px;
+}
+.home img {
+width: 1600px;
+height: 390px;
+}
+.home h1 {
+font-size: 40px;
+text-shadow: 10px 10px 12px black;
+}
+.home .text2{
+font-size: 18px;
+margin: 20px ;
+position: absolute;
+bottom: 220px;
+left:130px;
+
+}
+.home p{
+text-shadow: 5px 5px 5px black;
+}
+.about {
+padding: 30px 0;
+background-image: linear-gradient(rgba(241, 238, 238, 0),rgba(247, 241, 241, 0));
+margin-left: 200px;
+}
+.base{
+display: inline-flex;
+padding-top: 0px;
+width: 900px;
+padding-bottom: 0px;
+margin-left: 100px;
+background-image: linear-gradient(rgb(243, 117, 243),pink);
+}
+/*1rem=16px*/
+.about h1 {
+font-size: 1.7rem;
+margin-left: 10px;
+width: 600px;
+font-family: serif;
+}
+.about p {
+font-size: 16px;
+width: 400px;
+margin-left: 10px;
+margin-top:20px ;
+word-spacing: 3px;
+text-align: justify;
+}
+.about button {
+background-color:rgb(131, 12, 12);
+color:white;
+border:none;
+padding: 8px 20px;
+font-size: 14px;
+border-radius: 4px;
+margin-left: 130px;
+margin-top: 15px;
+transition: 0.5s;
+}
+.about button:hover{
+background-image: linear-gradient(rgba(241, 11, 11, 0.877),black);
+letter-spacing: 3px;
+}
+.menu {
+padding: 2px;
+background-image: linear-gradient(rgba(197, 193, 193, 0.13),rgba(197, 197, 197, 0.116));
+margin-left: 160px;
+transition: width 2s, height 2s;
+}
+.cont{
+display: inline-flex;
+box-shadow: 7px 7px 10px ;
+max-width: 1200px;
+background-color: rgba(172, 228, 238, 0.067);
+color: black;
+}
+.hm{
+font-size: 23px;
+}
+.menu .menu-card:hover{
+color: white;
+}
+.menu .menu-card {
+text-align: center;
+box-shadow: 7px 7px 7px ;
+display: inline-flex;
+color: black;
+}
+.menu .menu-card img{
+width:200px;
+height:180px;
+transition: width 0s, height 0s;
+}
+.menu .menu-card img:hover{
+width:220px;
+height:190px;
+}
+.menu h3 {
+font-size: 25px;
+font-family: serif;
+}
+.menu p {
+font-size: 16px;
+}
+.h1{
+font-size: 23px;
+}
+.products {
+column-gap: 20px;
+display: inline-flex;
+margin-right: 1900px;
+margin-left: 10px;
+background:linear-gradient(80deg,rgb(109, 107, 107),rgb(255, 253, 253));
+border-radius: 30%;
+width:1500px;
+/*box-shadow:2px 5px 10px rgb(224, 224, 224);*/
+box-shadow:inset 33px 25px 45px #e91ebd;
+margin-bottom: 30px;
+}
+.products h2 {
+font-size: 36px;
+text-align: center;
+}
+.products .product-card {
+text-align: center;
+margin-top: 30px;
+box-shadow: 5px 5px 10px rgb(2, 2, 2);
+width: 200px;
+margin-bottom: 30px;
+color:rgb(0, 0, 0);
+border-radius: 30%;
+margin-left: 14px;
+}
+.products .product-card img{
+width: 140px;
+border-radius: 20%;
+}
+.products .product-card p {
+font-size: 18px;
+margin: 6px 0;
+}
+.products .product-card button {
+background-color: #333;
+color: #fff;
+border:none;
+padding: 5px 7px;
+border-radius: 5px;
+transition: 0.5s;
+}
+.products .product-card:hover{
+color:rgb(255, 255, 255);
+}
+.products .product-card button:hover {
+background-image: linear-gradient(rgb(252, 0, 176),rgb(0, 0, 0));
+word-spacing: 6px;
+}
+.footer{
+background-color: #24262b;
+height: auto;
+width: 100vw;
+padding: 70px;
+font-family: 'Poppins', sans-serif;
+background-size: cover;
+position: relative;
+text-align: left;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+
+
+.footer-col {
+width: 60%;
+padding: 0 15px;
+}
+.footer-col h4{
+font-size: 18px;
+color: #ffffff;
+text-transform: capitalize;
+margin-bottom:35px ;
+font-weight: 500;
+position: relative;
+}
+
+.footer-col h4::before{
+content:'';
+position: absolute;
+left: 0;
+bottom: -10px;
+background-color: #e91e63;
+height: 2px;
+box-sizing: border-box;
+width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+margin-bottom:10px ;
+
+}
+.footer-col ul li a{
+font-size: 16px;
+text-transform: capitalize;
+color: #ffffff;
+text-decoration: none;
+font-weight: 300;
+color: #bbbbbb;
+display: block;
+transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+color: #ffffff;
+padding-left: 8px;
+}
+
+.footer-col .social a {
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgba(225, 255, 255, 0.2);
+margin: 0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: white;
+transition: all 0.5s ease;
+}
+.footer-col .social a:hover {
+color: #24262b;
+background-color: #ffffff; }
+</style>
+<title><font size="60">Cosmetics Store</font></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+</head>
+<body>
+<header>
+<div class="front">
+<a href="#" class="space"><b><U>COSMETIC STORE</U></b></a>
+<form class="search-form">
+<input type="text" placeholder="Search..." />
+<button type="submit">Search</button>
+</form>
+<nav class="navbar">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Menu</a></li>
+<li><a href="#">Products</a></li>
+</ul>
+</nav>
+</div>
+<nav class="shopping-cart">
+<a href="#">
+<i class="fa fa-address-book fa-2x"></i>
+<p><b>Contact</b></p>
+</a>
+<a href="#">
+<i class="fa fa-shopping-cart fa-2x"></i>
+<p><b>cart</b></p></a>
+<a href="#">
+<i class="fa-regular fa-heart fa-2x"></i>
+<p><b>wishlist</b></p></a>
+</nav>
+</header>
+<div class="home">
+<img src="C:\Users\admin\Pictures\icosmo.png" alt="Cosmetics">
+<div class="text"><h1>Welcome to our cosmetic store</h1></div>
+<div class="text2"><p>We offer variety of cosmetic products according to your beauty needs</p></div>
+</div></br>
+</br><h1 align="center"><u>About Us</u></h1>
+<section class="about" >
+<div class="base">
+<div class="image">
+<img src="C:\Users\admin\Pictures\about.png" alt="" width="470" height="300"></div>
+<div>
+<h1> What makes our products special?</h1>
+<p >we have best selling products so come and fing your desired beauty product at your desire fare.
+The most beautiful makeup of a woman is passion .</p>
+<p>
+but cosmetics is easier to buy.
+Make-up is not a tool meant to make an ugly thing beautiful, it is meant to magnify the beauty that already exist.
+</p>
+<button type="submit">learn more</button>
+</div>
+
+</div>
+</section>
+<hr>
+<div class="hm">
+</br><h1 align="center" size="200" ><font="serif"><span><u><b>Menu</b></u></span></font></h1></br>
+</div>
+</br><section class="menu">
+<div class="cont">
+<div class="menu-card">
+<img src="C:\Users\admin\Pictures\kitt.png" alt="Makeup" width="600" />
+</div>
+<div>
+<h3 align="center">Makeup</h3></br>
+<p align="center">We offer a variety of makeup products, including foundations, concealers, powders, blushes, eye shadows, mascaras, and lipsticks.</p></br>
+</div>
+<div class="menu-card">
+<img src="C:\Users\admin\Pictures\skin.png" alt="Skincare" /></div>
+<div>
+<h3 align="center">Skincare</h3></br>
+<p align="center">We offer a range of skincare products, including cleansers, toners, moisturizers, serums, and eye creams.</p></br>
+</div>
+<div class="menu-card">
+<img src="C:\Users\admin\Pictures\hair.png" alt="Haircare" /></div>
+<div>
+<h3 align="center">Haircare</h3></br>
+<p align="center">We offer a range of haircare products, including shampoos, conditioners, hair masks, and styling products.</p></br>
+</div>
+</section>
+</br><hr>
+<div class="h1">
+</br><h1 align="center"><u><b>Featured Products</b></u></h1></br>
+<h2 align="center"><u><b>Makeup Products</b></u></h2>
+</br></div>
+<section class="products">
+</br><div class="product-card">
+<img src="C:\Users\admin\Pictures\lipiss.png" alt="Product 1" />
+<h3>lipstick</h3>
+<p>200Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\mascara.png" alt="Product 2" />
+<h3>mascara</h3>
+<p>200Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\blus.png" alt="Product 3" />
+<h3>blush</h3>
+<p>200Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card"><span>
+<img src="C:\Users\admin\Pictures\foundation.png" alt="Product 1" />
+<h3>foundation</h3>
+<p>350Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div></span>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\shadows.png" alt="Product 1" />
+<h3>Eye shadows</h3>
+<p>240Rs</p>
+<button>Add to Cart</button>
+</div>
+</br><div class="product-card">
+<img src="C:\Users\admin\Pictures\cons.png" alt="Product 1" />
+<h3>concealer</h3>
+<p>280Rs</p>
+<button>Add to Cart</button>
+</div>
+</section></br>
+</br><h1 align="center"><u><b> Skincare Products</b></u></h1></br>
+</br><section class="products">
+<div class="card">
+<ul>
+</div>
+</br><div class="product-card">
+<img src="C:\Users\admin\Pictures\clean.png" alt="Product 1" />
+<h3>Cleansers</h3>
+<p>400Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\seru.png" alt="Product 2" />
+<h3>Serums</h3>
+<p>350Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\eye.png" alt="Product 2" />
+<h3>Eye cream</h3>
+<p>500Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\toners.png" alt="Product 2" />
+<h3>Toners</h3>
+<p>450Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\mosti.png" alt="Product 2" />
+<h3>Moisturizers</h3>
+<p>450Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+<div class="product-card">
+<ul>
+<img src="C:\Users\admin\Pictures\fc.png" alt="Product 2" />
+<h3>Face Cream</h3>
+<p>300Rs</p>
+<button>Add to Cart</button>
+</ul>
+</div>
+</section></br>
+</br><h1 align="center"><u><b>Haircare Products</b></u></h1></br>
+</br><section class="products">
+<div class="card">
+<ul>
+</div>
+</br><div class="product-card">
+<img src="C:\Users\admin\Pictures\shampoo.png" alt="Product 1" />
+<h3>Shampoo</h3>
+<p>300Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\condi.png" alt="Product 1" />
+<h3>Conditioners</h3>
+<p>380Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\masks.png" alt="Product 1" />
+<h3>Hair mask</h3>
+<p>360Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\colors.png" alt="Product 1" />
+<h3>Hair Colors</h3>
+<p>480Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\hairoils.png" alt="Product 1" />
+<h3>Hair Oils</h3>
+<p>200Rs</p>
+<button>Add to Cart</button>
+</div>
+<div class="product-card">
+<img src="C:\Users\admin\Pictures\jels.png" alt="Product 1" />
+<h3>Hair Jels</h3>
+<p>500Rs</p>
+<button>Add to Cart</button>
+</div>
+</section>
+</br><hr></br>
+<footer class="footer">
+<div class="container">
+<div class="row">
+<div class="footer-col">
+<h4>About Us</h4>
+<ul>
+<li><a href="/productquality.html">Product Quality </a></li>
+<li><a href="/about.html"> About Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<ul>
+<h4>Customer Service</h4>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Leave a review/complaint</a></li>
+<li><a href="#">Return Policy</a></li>
+<li><a href="#">Payment Options</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Follow us</h4>
+<div class="social">
+<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
